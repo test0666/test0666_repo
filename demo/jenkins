@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Install Maven') {
+            steps {
+                sh '''
+                sudo apt update
+                sudo apt install -y maven
+                mvn -version
+                '''
+            }
+        }
+    }
+}
